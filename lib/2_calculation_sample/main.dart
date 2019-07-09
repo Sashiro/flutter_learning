@@ -1,13 +1,19 @@
+// 导包，使用了Material风格组建
 import 'package:flutter/material.dart';
 
+/*
+ * main函数为Application入口
+ * 调用runApp()启动Flutter，接受一个Widget参数
+ */
 void main() => runApp(MyApp());
 
+// Flutter应用结构
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Demo', // 应用名称
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -18,13 +24,25 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue, // 主题颜色：蓝色
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Flutter Demo Home Page'), // 首页应用路由
     );
   }
 }
+/*
+ * Flutter在构建页面时，会调用组建的 build() 方法
+ * widget的主要工作是提供一个 build() 方法来描述如何构建UI洁面（通常是通过组合、拼装其他基础widget）
+ *
+ * MaterialApp 是Material组建库提供的Flutter APP框架
+ * 可以设置应用名、主题、语言、首页、路由列表等
+ * 也是一个widget
+ */
 
+
+/* 首页
+ * 被定义为一个 stateful 的widget
+ */
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 
@@ -43,10 +61,14 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
+// 首页的 widget 对应的 state
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
   void _incrementCounter() {
+    /* 作用是通知Flutter框架有state发生变化
+     * 当Flutter框架收到通知后，执行 build() 根据最新状态重新构建界面
+     */
     setState(() {
       // This call to setState tells the Flutter framework that something has
       // changed in this State, which causes it to rerun the build method below
@@ -57,6 +79,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  /*
+   * MyHomePage第一次被创建时，_MyHomePageState会被创建
+   * 初始化完成后会调用Widget的 build()
+   */
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -65,6 +91,11 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+    /*
+     * Material库提供的一个Widget
+     * 提供默认导航栏+标题、包含主屏幕widget树的body属性、FloatingActionButton（可选）
+     * widget树可以很复杂
+     */
     return Scaffold(
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
