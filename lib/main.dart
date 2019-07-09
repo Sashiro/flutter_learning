@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/3_route_management/NamedNewRoute.dart';
 import 'package:flutter_learning/3_route_management/NewRoute.dart';
+import 'package:flutter_learning/4_package_dependencies/RandomWordRoute.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
         "named_new_page": (context) => NamedNewRoute(),
+        "random_word_page": (context) => RandomWordRoute()
       },
     );
   }
@@ -60,6 +62,11 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () => Navigator.push(context,
                   new MaterialPageRoute(builder: (context) => new NewRoute())),
+            ),
+            FlatButton(
+              child: Text("open random word page"),
+              textColor: Colors.deepOrange,
+              onPressed: () => Navigator.pushNamed(context, "random_word_page"),
             )
           ],
         ),
