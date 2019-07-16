@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learning/3_route_management/NamedNewRoute.dart';
 import 'package:flutter_learning/3_route_management/NewRoute.dart';
 import 'package:flutter_learning/4_package_dependencies/RandomWordRoute.dart';
+import 'package:flutter_learning/7_widget/Echo.dart';
 
 import '5_assets/AssetsRoute.dart';
 
@@ -75,7 +76,15 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.deepPurple,
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => AssetsRoute())),
-            )
+            ),
+            FlatButton(
+              child: Text("get Echo"),
+              textColor: Colors.deepOrangeAccent,
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => Echo.getEcho(context))),
+            ),
           ],
         ),
       ),
