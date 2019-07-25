@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/7_widget/ImageAndIcon.dart';
+import 'package:flutter_learning/7_widget/InputAndForm.dart';
 import 'package:flutter_learning/7_widget/LifecycleRoute.dart';
 import 'package:flutter_learning/7_widget/state_management/StateManageRoute.dart';
 
@@ -35,6 +36,12 @@ class Echo extends StatelessWidget {
             color: Colors.grey,
             onPressed: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ImageAndIcon())),
+          ),
+          FlatButton(
+            child: Text("Input and form"),
+            color: Colors.tealAccent,
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => InputAndForm())),
           )
         ],
       ),
