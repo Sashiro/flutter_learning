@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learning/7_widget/ImageAndIcon.dart';
 import 'package:flutter_learning/7_widget/InputAndForm.dart';
 import 'package:flutter_learning/7_widget/LifecycleRoute.dart';
+import 'package:flutter_learning/7_widget/ScaffoldRoute.dart';
 import 'package:flutter_learning/7_widget/state_management/StateManageRoute.dart';
 
 class Echo extends StatelessWidget {
@@ -42,6 +43,12 @@ class Echo extends StatelessWidget {
             color: Colors.tealAccent,
             onPressed: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => InputAndForm())),
+          ),
+          FlatButton(
+            child: Text("Scaffold Route"),
+            color: Colors.yellowAccent,
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => ScaffoldRoute())),
           )
         ],
       ),
