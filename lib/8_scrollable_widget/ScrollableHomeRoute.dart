@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/8_scrollable_widget/GridViewRoute.dart';
 import 'package:flutter_learning/8_scrollable_widget/ListViewRoute.dart';
 
 class ScrollableHomeRoute extends StatelessWidget {
@@ -29,7 +30,10 @@ class ScrollableHomeRoute extends StatelessWidget {
             FlatButton(
               color: Colors.tealAccent,
               child: Text("GridView"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => GridViewRoute()));
+              },
             ),
             FlatButton(
               color: Colors.cyan,
