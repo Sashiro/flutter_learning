@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/8_scrollable_widget/CustomScrollViewRoute.dart';
 import 'package:flutter_learning/8_scrollable_widget/GridViewRoute.dart';
 import 'package:flutter_learning/8_scrollable_widget/ListViewRoute.dart';
 
@@ -38,7 +39,10 @@ class ScrollableHomeRoute extends StatelessWidget {
             FlatButton(
               color: Colors.cyan,
               child: Text("CustomScrollView"),
-              onPressed: () {},
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => CustomScrollViewRoute())),
             ),
           ],
         ),

@@ -57,6 +57,7 @@ flutter:
   assets:
     - assets/asset_json.json
     - pictures/asset_icon.png
+    - pictures/sliver.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
