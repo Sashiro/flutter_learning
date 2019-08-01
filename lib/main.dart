@@ -3,6 +3,7 @@ import 'package:flutter_learning/3_route_management/NamedNewRoute.dart';
 import 'package:flutter_learning/3_route_management/NewRoute.dart';
 import 'package:flutter_learning/4_package_dependencies/RandomWordRoute.dart';
 import 'package:flutter_learning/7_widget/Echo.dart';
+import 'package:flutter_learning/8_scrollable_widget/ScrollableHomeRoute.dart';
 
 import '5_assets/AssetsRoute.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       routes: {
         "named_new_page": (context) => NamedNewRoute(),
-        "random_word_page": (context) => RandomWordRoute()
+        "random_word_page": (context) => RandomWordRoute(),
+        "scrollable_home_page": (context) => ScrollableHomeRoute(),
       },
     );
   }
@@ -85,6 +87,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute(
                       builder: (context) => Echo.getEcho(context))),
             ),
+            FlatButton(
+                child: Text("scrollable home page"),
+                textColor: Colors.tealAccent,
+                onPressed: () =>
+                    Navigator.pushNamed(context, "scrollable_home_page")),
           ],
         ),
       ),
