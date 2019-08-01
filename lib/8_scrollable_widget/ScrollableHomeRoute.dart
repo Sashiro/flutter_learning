@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learning/8_scrollable_widget/CustomScrollViewRoute.dart';
 import 'package:flutter_learning/8_scrollable_widget/GridViewRoute.dart';
 import 'package:flutter_learning/8_scrollable_widget/ListViewRoute.dart';
+import 'package:flutter_learning/8_scrollable_widget/ScrollControllerRoute.dart';
+import 'package:flutter_learning/8_scrollable_widget/ScrollNotificationRoute.dart';
 
 class ScrollableHomeRoute extends StatelessWidget {
   @override
@@ -43,6 +45,22 @@ class ScrollableHomeRoute extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => CustomScrollViewRoute())),
+            ),
+            FlatButton(
+              color: Colors.cyan[500],
+              child: Text("ScrollController"),
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ScrollControllerRoute())),
+            ),
+            FlatButton(
+              color: Colors.cyan[900],
+              child: Text("ScrollNotification"),
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ScrollNotificationRoute())),
             ),
           ],
         ),
