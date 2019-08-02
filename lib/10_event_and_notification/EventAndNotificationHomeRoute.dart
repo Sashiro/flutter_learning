@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/10_event_and_notification/NotificationRoute.dart';
 import 'package:flutter_learning/10_event_and_notification/PointerEventRoute.dart';
 import 'package:flutter_learning/10_event_and_notification/GestureDetectorRoute.dart';
 
@@ -27,6 +28,14 @@ class EventAndNotificationHomeRoute extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => GestureDetectorRoute())),
+            ),
+            FlatButton(
+              color: Colors.pinkAccent[100],
+              child: Text('Notification'),
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NotificationRoute())),
             ),
           ],
         ),
