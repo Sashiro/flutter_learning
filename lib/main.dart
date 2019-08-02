@@ -5,6 +5,7 @@ import 'package:flutter_learning/4_package_dependencies/RandomWordRoute.dart';
 import 'package:flutter_learning/7_widget/Echo.dart';
 import 'package:flutter_learning/8_scrollable_widget/ScrollableHomeRoute.dart';
 import 'package:flutter_learning/9_functional_widget/InheritedWidgetContainer.dart';
+import 'package:flutter_learning/9_functional_widget/ThemeRoute.dart';
 
 import '5_assets/AssetsRoute.dart';
 
@@ -104,6 +105,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => InheritedWidgetContainer())),
+              ),
+              FlatButton(
+                child: Text('Change Theme Page'),
+                textColor: Colors.blue[200],
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ThemeRoute())),
               )
             ],
           ),
