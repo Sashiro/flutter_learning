@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/10_event_and_notification/EventAndNotificationHomeRoute.dart';
 import 'package:flutter_learning/3_route_management/NamedNewRoute.dart';
 import 'package:flutter_learning/3_route_management/NewRoute.dart';
 import 'package:flutter_learning/4_package_dependencies/RandomWordRoute.dart';
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
         "named_new_page": (context) => NamedNewRoute(),
         "random_word_page": (context) => RandomWordRoute(),
         "scrollable_home_page": (context) => ScrollableHomeRoute(),
+        "event_notification_home_page": (context) =>
+            EventAndNotificationHomeRoute(),
       },
     );
   }
@@ -111,6 +114,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.blue[200],
                 onPressed: () => Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ThemeRoute())),
+              ),
+              FlatButton(
+                child: Text('event and notfication page'),
+                textColor: Colors.blue[300],
+                onPressed: () => Navigator.pushNamed(
+                    context, 'event_notification_home_page'),
               )
             ],
           ),
