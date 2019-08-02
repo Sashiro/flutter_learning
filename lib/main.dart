@@ -4,6 +4,7 @@ import 'package:flutter_learning/3_route_management/NewRoute.dart';
 import 'package:flutter_learning/4_package_dependencies/RandomWordRoute.dart';
 import 'package:flutter_learning/7_widget/Echo.dart';
 import 'package:flutter_learning/8_scrollable_widget/ScrollableHomeRoute.dart';
+import 'package:flutter_learning/9_functional_widget/InheritedWidgetContainer.dart';
 
 import '5_assets/AssetsRoute.dart';
 
@@ -51,48 +52,61 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
-            FlatButton(
-              child: Text("open new route"),
-              textColor: Colors.blue,
-              onPressed: () => Navigator.push(context,
-                  new MaterialPageRoute(builder: (context) => new NewRoute())),
-            ),
-            FlatButton(
-              child: Text("open random word page"),
-              textColor: Colors.deepOrange,
-              onPressed: () => Navigator.pushNamed(context, "random_word_page"),
-            ),
-            FlatButton(
-              child: Text("open assets route"),
-              textColor: Colors.deepPurple,
-              onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AssetsRoute())),
-            ),
-            FlatButton(
-              child: Text("get Echo"),
-              textColor: Colors.deepOrangeAccent,
-              onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Echo.getEcho(context))),
-            ),
-            FlatButton(
-                child: Text("scrollable home page"),
-                textColor: Colors.tealAccent,
+      body: Scrollbar(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'You have pushed the button this many times:',
+              ),
+              Text(
+                '$_counter',
+                style: Theme.of(context).textTheme.display1,
+              ),
+              FlatButton(
+                child: Text("open new route"),
+                textColor: Colors.blue,
+                onPressed: () => Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (context) => new NewRoute())),
+              ),
+              FlatButton(
+                child: Text("open random word page"),
+                textColor: Colors.deepOrange,
                 onPressed: () =>
-                    Navigator.pushNamed(context, "scrollable_home_page")),
-          ],
+                    Navigator.pushNamed(context, "random_word_page"),
+              ),
+              FlatButton(
+                child: Text("open assets route"),
+                textColor: Colors.deepPurple,
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AssetsRoute())),
+              ),
+              FlatButton(
+                child: Text("get Echo"),
+                textColor: Colors.deepOrangeAccent,
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Echo.getEcho(context))),
+              ),
+              FlatButton(
+                  child: Text("scrollable home page"),
+                  textColor: Colors.tealAccent,
+                  onPressed: () =>
+                      Navigator.pushNamed(context, "scrollable_home_page")),
+              FlatButton(
+                child: Text("IneritedWidget"),
+                textColor: Colors.lightBlue[500],
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => InheritedWidgetContainer())),
+              )
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
