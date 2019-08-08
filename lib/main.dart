@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/10_event_and_notification/EventAndNotificationHomeRoute.dart';
 import 'package:flutter_learning/11_animation/AnimationHomeRoute.dart';
+import 'package:flutter_learning/12_custom_widget/CustomHomeRoute.dart';
 import 'package:flutter_learning/3_route_management/NamedNewRoute.dart';
 import 'package:flutter_learning/3_route_management/NewRoute.dart';
 import 'package:flutter_learning/4_package_dependencies/RandomWordRoute.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         "event_notification_home_page": (context) =>
             EventAndNotificationHomeRoute(),
         "animation_home_page": (context) => AnimationHomeRoute(),
+        "custom_home_page": (context) => CustomHomeRoute(),
       },
     );
   }
@@ -128,6 +130,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 textColor: Colors.pinkAccent,
                 onPressed: () =>
                     Navigator.pushNamed(context, 'animation_home_page'),
+              ),
+              FlatButton(
+                child: Text("Custom home page"),
+                textColor: Colors.blue[400],
+                onPressed: () =>
+                    Navigator.pushNamed(context, 'custom_home_page'),
               ),
             ],
           ),
