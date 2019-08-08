@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/11_animation/FadeRoute.dart';
+import 'package:flutter_learning/11_animation/HeroRoute.dart';
 import 'package:flutter_learning/11_animation/ScaleAnimationRoute.dart';
 
 class AnimationHomeRoute extends StatelessWidget {
@@ -41,6 +42,12 @@ class AnimationHomeRoute extends StatelessWidget {
               onPressed: () => Navigator.push(context,
                   FadeRoute(builder: (context) => ScaleAnimationRoute())),
             ),
+            FlatButton(
+              color: Colors.cyan[400],
+              child: Text('HeroAnimation'),
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HeroRouteA())),
+            )
           ],
         ),
       ),
