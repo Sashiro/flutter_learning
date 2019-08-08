@@ -52,9 +52,12 @@ class _ScaleAnimationRouteState extends State<ScaleAnimationRoute>
 //      ),
 //    );
 
-    return GrowTransition(
-      child: Image.asset("pictures/asset_icon.png"),
-      animation: animation,
+    return Scaffold(
+      appBar: AppBar(),
+      body: GrowTransition(
+        child: Image.asset("pictures/asset_icon.png"),
+        animation: animation,
+      ),
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/11_animation/FadeRoute.dart';
 import 'package:flutter_learning/11_animation/ScaleAnimationRoute.dart';
 
 class AnimationHomeRoute extends StatelessWidget {
@@ -17,7 +18,29 @@ class AnimationHomeRoute extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (context) => ScaleAnimationRoute())),
-            )
+            ),
+            FlatButton(
+              color: Colors.cyan[200],
+              child: Text('PageRouteBuilder'),
+              onPressed: () => Navigator.push(
+                  context,
+                  // 使用PageRouteBuilder自定route转场动画
+                  PageRouteBuilder(
+                      transitionDuration: Duration(milliseconds: 500),
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return FadeTransition(
+                          // 透明度渐变过度
+                          opacity: animation,
+                          child: ScaleAnimationRoute(),
+                        );
+                      })),
+            ),
+            FlatButton(
+              color: Colors.cyan[300],
+              child: Text('PageRoute'),
+              onPressed: () => Navigator.push(context,
+                  FadeRoute(builder: (context) => ScaleAnimationRoute())),
+            ),
           ],
         ),
       ),
