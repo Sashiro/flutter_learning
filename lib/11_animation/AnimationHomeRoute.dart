@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_learning/11_animation/FadeRoute.dart';
 import 'package:flutter_learning/11_animation/HeroRoute.dart';
 import 'package:flutter_learning/11_animation/ScaleAnimationRoute.dart';
+import 'package:flutter_learning/11_animation/StaggerRoute.dart';
 
 class AnimationHomeRoute extends StatelessWidget {
   @override
@@ -47,6 +48,12 @@ class AnimationHomeRoute extends StatelessWidget {
               child: Text('HeroAnimation'),
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => HeroRouteA())),
+            ),
+            FlatButton(
+              color: Colors.cyan[500],
+              child: Text('StaggerAnimation'),
+              onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => StaggerRoute())),
             )
           ],
         ),
