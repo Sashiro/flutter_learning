@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/12_custom_widget/CustomPaintRoute.dart';
+import 'package:flutter_learning/12_custom_widget/GradientCircularRoute.dart';
 
 class CustomHomeRoute extends StatelessWidget {
   @override
@@ -15,6 +16,14 @@ class CustomHomeRoute extends StatelessWidget {
               color: Colors.cyan[200],
               onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => CustomPaintRoute())),
+            ),
+            FlatButton(
+              child: Text('ProgressBar'),
+              color: Colors.cyan[300],
+              onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => GradientCircularRoute())),
             ),
           ],
         ),
