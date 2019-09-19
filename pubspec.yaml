@@ -31,6 +31,7 @@ dependencies:
 
   # 从Pub仓库导入
   english_words: ^3.1.5
+  path_provider: ^0.4.1
 
 # 开发环境依赖的工具包
 dev_dependencies:
